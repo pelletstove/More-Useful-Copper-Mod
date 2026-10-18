@@ -1,5 +1,6 @@
 package io.github.jason13official.more_useful_copper.impl.common.entity;
 
+import net.minecraft.world.entity.EntityTypes;
 import io.github.jason13official.more_useful_copper.impl.common.registry.ModEntities;
 import io.github.jason13official.more_useful_copper.impl.common.registry.ModItems;
 import net.minecraft.core.BlockPos;
@@ -44,7 +45,7 @@ public class ThrownLightningBottle extends ThrowableItemProjectile {
   protected void onHit(HitResult result) {
     super.onHit(result);
     if (this.level() instanceof ServerLevel level) {
-      EntityType.LIGHTNING_BOLT.spawn(level, BlockPos.containing(result.getLocation()), EntitySpawnReason.EVENT);
+      EntityTypes.LIGHTNING_BOLT.spawn(level, BlockPos.containing(result.getLocation()), EntitySpawnReason.EVENT);
       this.level().broadcastEntityEvent(this, EntityEvent.DEATH);
       this.discard();
     }

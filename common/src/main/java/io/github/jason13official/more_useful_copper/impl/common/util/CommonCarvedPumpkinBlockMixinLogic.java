@@ -4,7 +4,7 @@ import io.github.jason13official.more_useful_copper.impl.common.entity.CopperGol
 import io.github.jason13official.more_useful_copper.impl.common.registry.ModEntities;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -48,7 +48,7 @@ public class CommonCarvedPumpkinBlockMixinLogic {
       pattern = BlockPatternBuilder.start()
           .aisle("~^~", "###", "~#~")
           .where('^', BlockInWorld.hasState(PUMPKINS_PREDICATE))
-          .where('#', BlockInWorld.hasState(BlockStatePredicate.forBlock(Blocks.COPPER_BLOCK)))
+          .where('#', BlockInWorld.hasState(BlockStatePredicate.forBlock(Blocks.COPPER_BLOCK.weathering().unaffected())))
           .where('~', (blockInWorld) -> blockInWorld.getState().isAir()).build();
     }
 

@@ -28,7 +28,7 @@ public class LightningAxeItem extends AxeItem {
   public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
     float g = 2.0f;
     if (isFoil(stack)) {
-      target.knockback(g, Mth.sin(attacker.getYRot() * (float) (Math.PI / 180.0)), -Mth.cos(attacker.getYRot() * (float) (Math.PI / 180.0)));
+      target.knockback(g, Mth.sin(attacker.getYRot() * (float) (Math.PI / 180.0)), -Mth.cos(attacker.getYRot() * (float) (Math.PI / 180.0)), attacker.damageSources().generic(), 0.0F);
     }
     super.hurtEnemy(stack, target, attacker);
   }

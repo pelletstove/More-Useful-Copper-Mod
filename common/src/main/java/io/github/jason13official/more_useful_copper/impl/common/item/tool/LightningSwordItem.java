@@ -1,5 +1,6 @@
 package io.github.jason13official.more_useful_copper.impl.common.item.tool;
 
+import net.minecraft.world.entity.EntityTypes;
 import java.util.List;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -29,7 +30,7 @@ public class LightningSwordItem extends Item {
   public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
     Level level = target.level();
     if (level instanceof ServerLevel serverLevel) {
-      LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(serverLevel, net.minecraft.world.entity.EntitySpawnReason.EVENT);
+      LightningBolt bolt = EntityTypes.LIGHTNING_BOLT.create(serverLevel, net.minecraft.world.entity.EntitySpawnReason.EVENT);
       if (bolt != null) {
         bolt.setPos(target.position());
         serverLevel.addFreshEntity(bolt);

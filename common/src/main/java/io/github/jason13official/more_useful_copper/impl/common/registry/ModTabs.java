@@ -17,7 +17,7 @@ public class ModTabs {
   public static void register(BiConsumer<CreativeModeTab, Identifier> consumer) {
 
     MORE_USEFUL_COPPER = Services.PLATFORM.tabBuilder()
-        .icon(() -> new ItemStack(Items.COPPER_BLOCK))
+        .icon(() -> new ItemStack(Items.COPPER_BLOCK.weathering().unaffected()))
         .title(Component.translatable("itemGroup.moreUsefulCopper"))
         .displayItems((itemDisplayParameters, output) -> {
           addItemsToTabOutput(output);

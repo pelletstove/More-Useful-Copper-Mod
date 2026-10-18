@@ -1,5 +1,6 @@
 package io.github.jason13official.more_useful_copper.impl.common.entity;
 
+import net.minecraft.world.entity.EntityTypes;
 import io.github.jason13official.more_useful_copper.impl.common.entity.ai.goal.DefendPlayerTargetGoal;
 import io.github.jason13official.more_useful_copper.impl.common.entity.ai.goal.FollowPlayerGoal;
 import net.minecraft.core.BlockPos;
@@ -151,12 +152,12 @@ public class CopperGolem extends AbstractPersistentAngerPathfinderMob {
       for (int yOffset = 1; yOffset < 3; ++yOffset) {
         BlockPos above = pos.above(yOffset);
         BlockState aboveState = pLevel.getBlockState(above);
-        if (!NaturalSpawner.isValidEmptySpawnBlock(pLevel, above, aboveState, aboveState.getFluidState(), EntityType.IRON_GOLEM)) {
+        if (!NaturalSpawner.isValidEmptySpawnBlock(pLevel, above, aboveState, aboveState.getFluidState(), EntityTypes.IRON_GOLEM)) {
           return false;
         }
       }
 
-      return NaturalSpawner.isValidEmptySpawnBlock(pLevel, pos, pLevel.getBlockState(pos), Fluids.EMPTY.defaultFluidState(), EntityType.IRON_GOLEM) && pLevel.isUnobstructed(this);
+      return NaturalSpawner.isValidEmptySpawnBlock(pLevel, pos, pLevel.getBlockState(pos), Fluids.EMPTY.defaultFluidState(), EntityTypes.IRON_GOLEM) && pLevel.isUnobstructed(this);
     }
   }
 

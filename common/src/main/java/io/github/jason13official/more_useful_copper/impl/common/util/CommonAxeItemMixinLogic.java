@@ -3,7 +3,7 @@ package io.github.jason13official.more_useful_copper.impl.common.util;
 import io.github.jason13official.more_useful_copper.api.common.block.IOxidizableBlock;
 import io.github.jason13official.more_useful_copper.api.common.block.WaxableRegistry;
 import java.util.Optional;
-import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
